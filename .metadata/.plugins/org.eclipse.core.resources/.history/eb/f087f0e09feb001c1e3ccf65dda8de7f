@@ -1,0 +1,43 @@
+package com.example.noteapp.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.noteapp.model.UserNote;
+import com.example.noteapp.validation.IUserValidation;
+
+@Service
+public class UserNoteServiceImpl implements IUserNote {
+	
+	@Autowired
+	IUserValidation valid;
+	
+	List<UserNote> list = new ArrayList<UserNote>(); 
+
+	@Override
+	public String registerUser(UserNote user) {
+		// TODO Auto-generated method stub
+		if(user!=null) {
+			boolean isEmailValid = valid.validMail(user.getEmail());
+			if(isEmailValid) {
+				list.add(user);
+				return "success";
+			}
+		}
+		return "fail";
+		
+	}
+
+	@Override
+	public List<UserNote> getAllUser() {
+		// TODO Auto-generated method stub
+		for (UserNote note:list) {
+			System.out.println(note);
+		}
+		return list;
+	}
+
+}

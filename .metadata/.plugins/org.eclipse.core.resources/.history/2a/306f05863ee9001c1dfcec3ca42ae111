@@ -1,0 +1,8 @@
+package com.example.noteapp.service;
+
+import com.example.noteapp.model.UserNote;
+
+public interface IUserNote {
+	public String registerUser(UserNote user);
+
+}
