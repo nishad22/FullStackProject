@@ -1,0 +1,6 @@
+package com.example.noteapp.model;
+
+public class AuthenticationResponse {
+	
+	private final String jwt;
+}

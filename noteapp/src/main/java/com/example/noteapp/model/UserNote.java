@@ -26,11 +26,6 @@ public class UserNote {
 	private boolean active;
 	private String roles;
 	
-	
-	public String toString() {
-		return "UserNote + [ id ="+ id +",  password = "+ password +"]";
-	}
-
 
 	public int getId() {
 		return id;
@@ -78,5 +73,12 @@ public class UserNote {
 
 	public void setRoles(String roles) {
 		this.roles = roles;
+	}
+
+
+	@Override
+	public String toString() {
+		return "UserNote [id=" + id + ", email=" + email + ", password=" + password + ", active=" + active + ", roles="
+				+ roles + "]";
 	}
 }
